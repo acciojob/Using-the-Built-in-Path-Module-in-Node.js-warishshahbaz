@@ -1,9 +1,9 @@
-const fs = require("fs");
+const path = require("path");
 
-// TODO: Write the message "Hello, World!" to the file "output.txt"
+function joinPaths(input1, input2) {
+  const joinedPath = path.join(input1, input2);
+  console.log(joinedPath);
+}
 
-fs.writeFile("./output.txt", "Hello, World!", (error) => {
-  if (error) {
-    console.log(error);
-  }
-});
+const args = process.argv.slice(2);
+joinPaths(args[0], args[1]);
